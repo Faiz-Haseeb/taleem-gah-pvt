@@ -138,4 +138,5 @@ def teacher_homepage():
     # return 'Hello World!'
 
 if __name__ == '__main__':
-    app.run()
+    port = int(os.environ.get("PORT", 33507))
+    app.run(port = port)
