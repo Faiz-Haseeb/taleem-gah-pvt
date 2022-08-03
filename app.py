@@ -27,11 +27,11 @@ app.secret_key = 'BAD_SECRET_KEY'
 
 def get_db_connection():
     conn = psycopg2.connect(
-            host="localhost",
-            database="taleem-gah",
-            user= 'postgres',
-            password= '12345')
-
+            host="ec2-99-81-137-11.eu-west-1.compute.amazonaws.com",
+            database="daa4fhosr8e8gk",
+            user= 'wwaakwjbwwkzsz',
+            password= '8f8d7d62bfbd038bc9501b2bd87f7a7bd73625737c94e86c106dfeb8040e3397',
+            port = 5432)
     return conn
 
 # Open a cursor to perform database operations
@@ -138,4 +138,5 @@ def teacher_homepage():
     # return 'Hello World!'
 
 if __name__ == '__main__':
-    app.run()
+    port = int(os.environ.get("PORT", 33507))
+    app.run(port = port)
