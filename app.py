@@ -75,7 +75,7 @@ def submit():
         user_name = request.form['uname']
         password = request.form['pass']
         print("PASSWORD IS:", password)
-        # print(email, password)
+        print(email, password)
         if user_name == '' and password == '':
             return render_template('login.html', message = "Please enter required fields")
         elif user_name == '' and password != '':
@@ -89,7 +89,7 @@ def submit():
             cur.execute('SELECT Username from faculty where Username = %s', (user_name,))
             user_object = cur.fetchall() 
 
-            print(user_object[0][0])
+            #print(user_object[0][0])
 
             if user_object == user_name:
                 return render_template('login.html', message = "This username does not exist")
@@ -98,7 +98,7 @@ def submit():
                 cur.execute('SELECT Pass from faculty where Username = %s', (user_name,))
                 user_password = cur.fetchall()
 
-                print(user_password[0][0])
+                #print(user_password[0][0])
 
                 if user_password[0][0] == password:
 
