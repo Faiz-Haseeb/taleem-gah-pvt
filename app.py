@@ -74,8 +74,8 @@ def submit():
     if request.method == 'POST':
         user_name = request.form['uname']
         password = request.form['pass']
-        print("PASSWORD IS:", password)
-        print(email, password)
+        #print("PASSWORD IS:", password)
+        #print(email, password)
         if user_name == '' and password == '':
             return render_template('login.html', message = "Please enter required fields")
         elif user_name == '' and password != '':
