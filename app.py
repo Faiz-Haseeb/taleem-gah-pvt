@@ -57,7 +57,7 @@ def submit():
             try:
                 cur.execute('SELECT Username from faculty where Username = %s', (user_name,))
             except psycopg2.InterfaceError as exc:
-                print exc.message
+                print(exc.message)
                 conn = psycopg2.connect(
                     host="ec2-99-81-137-11.eu-west-1.compute.amazonaws.com",
                     database="daa4fhosr8e8gk",
